@@ -1,0 +1,6 @@
+.idea
+.so
+/app/build/lib.macosx-10.14-x86_64-3.7/
+/app/build/temp.macosx-10.14-x86_64-3.7/
+/app/myStringSearch.c
+/app/app/
