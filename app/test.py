@@ -1,6 +1,6 @@
 from typing import List
 from memory_profiler import profile
-from myStringSearch import StringSearch
+from app.myStringSearch import StringSearch
 #from StringSearch import StringSearch
 def stringSearch(spam_words: List[str], test_post: str):
     # 5490 test words
@@ -14,9 +14,9 @@ def stringSearch(spam_words: List[str], test_post: str):
 
 @profile
 def test():
-    with  open('../sample_post') as f:
+    with  open('./sample_post') as f:
         test_post = f.read()
-    with open('SpamWordsCN.min.txt') as f:
+    with open('./app/SpamWordsCN.min.txt') as f:
         span_words = [line.rstrip() for line in f]
     times = 100
     while times > 0:
