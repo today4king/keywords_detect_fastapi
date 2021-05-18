@@ -12,7 +12,7 @@ def stringSearch(spam_words: List[str], test_post: str):
     #print(f)
     # b = search.ContainsAny(test_post)
 
-@profile
+#@profile
 def test():
     with  open('./sample_post') as f:
         test_post = f.read()

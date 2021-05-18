@@ -1,15 +1,6 @@
-from fastapi import FastAPI
-from starlette.middleware.cors import CORSMiddleware
+from flask import Flask
 
-app = FastAPI()
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=[str(origin) for origin in ['http://127.0.0.1:8000']],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+app = Flask(__name__)
 with  open('./sample_post') as f:
     test_post = f.read()
 with open('./app/SpamWordsCN.min.txt') as f:
@@ -18,10 +9,8 @@ from app.myStringSearch import StringSearch
 
 search = StringSearch()
 search.SetKeywords(span_words)
-
-
-@app.post("/find-first")
-async def read_item(post: str):
+@app.route('/find-first',methods=['POST'])
+def find_first():
     is_found = False
     import time
     start_t = time.time()
